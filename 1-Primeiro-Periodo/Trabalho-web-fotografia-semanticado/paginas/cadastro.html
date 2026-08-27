@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crie sua conta</title>
+
+</head>
+<body>
+  <main>
+    
+    <section class="cadmeio">
+      <h1>Crie sua conta</h1>
+    
+      <form action="../entrada.html" id="formcadastro">
+     
+
+        <fieldset class="cadmeio">
+          <legend>Dados Pessoais</legend>
+
+      
+    
+          <label for="nome" class="meiocad">Nome:</label><br>
+          <input type="text" id="nome" name="nome" required class="cadmeio"><br><br>
+        
+        
+        
+        
+          <label for="email">Email:</label><br>
+          <input type="email" id="email" name="email" required  class="cadmeio"><br><br>
+        
+      
+        
+        
+          <label for="data" >Data de nascimento:</label>
+          <input type="date" id="data" name="data" required class="cadmeio"> <br><br>
+        
+        </fieldset>
+        
+        
+        <fieldset class="cadmeio">
+            <legend class="cadmeio">Sexo</legend>
+            
+            <input type="radio" id="masculino" name="sexo" value="Masculino" required>
+            <label for="masculino">Masculino</label><br>
+            <input type="radio" id="feminino" name="sexo" value="Feminino" required>
+            <label for="feminino">Feminino</label><br>
+        </fieldset><br>
+        
+      
+        
+        <fieldset>
+            <legend>Segurança</legend>
+            
+            <label for="senha">Senha:</label><br>
+            <input type="password" id="senha" name="senha" required class="cadmeio"><br><br>
+        
+      
+        
+        
+          <label for="confirmacao">Confirme sua senha:</label><br>
+          <input type="password" id="confirmacao" name="confirmacao" required class="cadmeio"><br><br>
+        </fieldset>
+
+        
+        <fieldset class="cadmeio">
+          <legend>Ações</legend>
+          <input type="reset" value="Limpar Dados" class="cadmeio">
+          <input type="submit" value="Cadastrar Cliente" class="cadmeio">
+          <input type="button" value="Consultar Cadastros" class="cadmeio" onclick="location.href='../paginas/consulta.html'"><br><br>
+          <a href="../entrada.html" class="cadmeio">Voltar</a>
+        </fieldset>
+        
+      </form>
+    </section>
+  </main>
+      <br><br>
+      
+      <footer style="padding: 30px;">&copy;
+        Desenvolvido por <strong>Gustavo Martins</strong>, <strong>José Gabriel</strong> e <strong>Tiago lemes</strong>. Todos os direitos reservados.
+      </footer>
+      
+</body>
+</html>

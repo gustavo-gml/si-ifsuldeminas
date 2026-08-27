@@ -1,0 +1,66 @@
+[gd_scene load_steps=13 format=3 uid="uid://yo5l1sbf86lh"]
+
+[ext_resource type="Script" uid="uid://wgrkmtdoiuy3" path="res://scenes/gate.gd" id="1_c7vyn"]
+[ext_resource type="Texture2D" uid="uid://caf4fyqe8cx2q" path="res://assets/portal/frame-1.png" id="1_cdwaa"]
+[ext_resource type="Texture2D" uid="uid://drqh0vagfwq3q" path="res://assets/portal/frame-2.png" id="2_c7vyn"]
+[ext_resource type="Texture2D" uid="uid://cfui87hjfyu8d" path="res://assets/portal/frame-3.png" id="3_jqs2g"]
+[ext_resource type="Texture2D" uid="uid://cp1e85485mi53" path="res://assets/portal/frame-4.png" id="4_p2too"]
+[ext_resource type="Texture2D" uid="uid://fyoq2ujyyo1o" path="res://assets/portal/frame-5.png" id="5_f3a1v"]
+[ext_resource type="Texture2D" uid="uid://cwu1nhluky65r" path="res://assets/portal/frame-6.png" id="6_h58mg"]
+[ext_resource type="Texture2D" uid="uid://4mx0udi3xo7b" path="res://assets/portal/frame-7.png" id="7_iu3lr"]
+[ext_resource type="Texture2D" uid="uid://b3xlgjsmlyoq1" path="res://assets/portal/frame-8.png" id="8_oco8l"]
+[ext_resource type="Texture2D" uid="uid://cim56q4w0sfku" path="res://assets/portal/frame-9.png" id="9_dhw13"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_h5b8s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_cdwaa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_c7vyn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_jqs2g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_p2too")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_f3a1v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_h58mg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_iu3lr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_oco8l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_dhw13")
+}],
+"loop": true,
+"name": &"default",
+"speed": 20.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mggtu"]
+radius = 6.0
+height = 40.0
+
+[node name="gate" type="Area2D"]
+script = ExtResource("1_c7vyn")
+
+[node name="anim" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_h5b8s")
+autoplay = "default"
+frame_progress = 0.83129
+
+[node name="collisor" type="CollisionShape2D" parent="."]
+position = Vector2(4, 1)
+shape = SubResource("CapsuleShape2D_mggtu")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

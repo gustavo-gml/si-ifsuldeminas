@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="estilo/style.css">
+  <title>Clic WR</title>
+</head>
+<body>
+  <header>
+    <a href="index.html" class="clic-logo">Clic WR</a>
+  </header> <!--link parar mesma página-->
+
+  <main>
+
+    <div class="formulario">
+
+        <h2 class="login-do-form">Login</h2> <!--login dentro do form-->
+
+        <form class="form-class" action="paginas/menu.html">
+          
+          <div class="div-input"  > <!-- Div para cada input -->
+            <label for="email" class="label">E-mail</label>
+            <input class="input" type="email" name="email" id="email" required placeholder="seuemail@gmail.com">
+          </div>
+
+          <div class="div-input" > 
+            <label class="label" for="senha">Senha</label>
+            <input class="input" type="password" name="senha" id="senha" required placeholder="Digite sua senha">
+          </div>
+
+          <div class="div-input" id="div-lembrar"> <!-- Div para checkbox -->
+            <input type="checkbox" name="lembrar" id="lembrar">
+            <label for="lembrar" >Lembrar de mim </label>
+          </div>
+
+          <div class="div-button"> <!-- Div para o botão -->
+            <button type="submit" class="button-submit">Entrar</button>
+          </div>
+
+          <div class="cadastro-convidado"> <!-- cadastro/ convidado -->
+          <p>Não tem uma conta? <a class = "links" href="paginas/cadastro.html">Cadastre-se</a></p>
+          <p><a class = "links" href="paginas/menu.html">Entrar como Convidado</a></p>
+        </div>
+
+        </form>
+        
+    </div>  
+
+  </main>
+
+  <footer class="rodape">
+    <p>&copy; 2025 | Desenvolvido por <strong>Gustavo Martins</strong>, <strong>José Gabriel</strong> e <strong>Tiago Lemes</strong>. Todos os direitos reservados<p>
+  </footer>
+</body>
+</html>

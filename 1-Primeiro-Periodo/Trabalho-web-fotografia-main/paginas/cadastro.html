@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crie sua conta</title>
+    <link rel="stylesheet" href="../estilo/style.css">
+</head>
+<body>
+  <main>
+    <form action="entrada.html" id="formcadastro">
+
+      <section class="cadmeio">
+        <article class="cadmeio">
+        <label for="nome" class="meiocad">Nome:</label><br>
+        <input type="text" id="nome" name="nome" required class="cadmeio"><br><br>
+        </article>
+        <article class="cadmeio">
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required  class="cadmeio"><br><br>
+        </article>
+      
+        <article class="cadmeio">
+        <label for="data" >Data de nascimento:</label>
+        <input type="date" id="data" name="data" required class="cadmeio"> <br><br>
+        </article>
+        <article class="cadmeio">
+        <fieldset class="cadmeio">
+          <legend class="cadmeio">Sexo</legend>
+          <input type="radio" id="masculino" name="sexo" value="Masculino" required>
+          <label for="masculino">Masculino</label><br>
+      
+          <input type="radio" id="feminino" name="sexo" value="Feminino" required>
+          <label for="feminino">Feminino</label><br>
+        </fieldset><br>
+      </article>
+      
+       
+        
+      <article class="cadmeio">
+        
+        <label for="senha">Senha:</label><br>
+        <input type="password" id="senha" name="senha" required class="cadmeio"><br><br>
+      </article>
+      <article class="cadmeio">
+        <label for="confirmacao">Confirme sua senha:</label><br>
+        <input type="password" id="confirmacao" name="confirmacao" required class="cadmeio"><br><br>
+      </article>
+
+      <article class="cadmeio">
+       
+        <input type="reset" value="Limpar Dados"class="cadmeio">
+
+       <input type="submit" value="Cadastrar Cliente" class="cadmeio">
+        
+        <a href="consulta.html" target="_blank"><input type="button" value="Consultar Cadastros" class="cadmeio"></a><br><br>
+        <a href="../entrada.html" class="cadmeio">Voltar</a>
+     </article>
+        
+      </section>
+      </form>
+    </main>
+      <br><br>
+      
+      <footer style="padding: 30px;">&copy;
+        Desenvolvido por <strong>Gustavo Martins</strong>, <strong>José Gabriel</strong> e <strong>Tiago lemes</strong>. Todos os direitos reservados.
+     </footer>
+      
+</body>
+</html>

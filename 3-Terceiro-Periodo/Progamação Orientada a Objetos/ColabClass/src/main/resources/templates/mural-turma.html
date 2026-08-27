@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html
+xmlns:th="http://www.thymeleaf.org"
+xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mural da Turma | Portal Acadêmico</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f9fa;
+            color: #334155;
+        }
+        .card {
+            border: none;
+            border-radius: 12px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        .section-title {
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .calendar-table th {
+            background-color: #f1f5f9;
+            font-weight: 600;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+        }
+        .calendar-table td {
+            height: 45px;
+            vertical-align: middle;
+            font-size: 0.9rem;
+        }
+        .badge-event {
+            width: 8px;
+            height: 8px;
+            display: inline-block;
+            border-radius: 50%;
+            margin-left: 2px;
+        }
+        .bg-ia { background-color: #eef2ff; }
+        .btn-quick-link {
+            text-align: left;
+            padding: 12px 20px;
+            border-radius: 10px;
+            font-weight: 500;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .navbar-custom {
+            background-color: #ffffff;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        
+        /* Novos estilos para os botões de ação */
+        .action-btn {
+            transition: all 0.2s ease;
+        }
+        .action-btn:hover {
+            transform: translateY(-2px);
+            filter: brightness(0.95);
+        }
+    </style>
+</head>
+<body>
+
+<div th:replace="~{fragments/navbar :: navbar}">
+    <nav class="navbar navbar-expand-lg navbar-light navbar-custom py-3">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-primary" href="#">Mural Turma</a>
+        </div>
+    </nav>
+</div>
+
+<div class="container mt-5 mb-5">
+
+    <div class="row mb-5">
+        <div class="col-12">
+            <div class="card shadow-sm border-start border-primary border-4">
+                <div class="card-body p-4">
+                    <div class="d-flex justify-content-between align-items-center flex-wrap">
+                        <div>
+                            <h1 class="display-5 fw-bold mb-1" th:text="${turma.nome}">Nome da Turma</h1>
+                            <p class="text-muted mb-0">
+                                <i class="bi bi-mortarboard-fill me-2"></i><span th:text="${turma.curso}">Curso Exemplo</span>
+                            </p>
+                        </div>
+                        <div class="mt-3 mt-md-0 text-md-end">
+                            <span class="badge bg-primary-subtle text-primary px-3 py-2 rounded-pill mb-2 d-inline-block">
+                                <i class="bi bi-calendar3 me-2"></i>Ano: <span th:text="${turma.anoIngresso}">2024</span>
+                            </span>
+                            <br>
+                            <span class="badge bg-secondary-subtle text-secondary px-3 py-2 rounded-pill d-inline-block">
+                                <i class="bi bi-hash me-1"></i>Código: <span th:text="${turma.codigo}">TRM-123</span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row g-4">
+
+        <div class="col-lg-7">
+            
+            <div class="card shadow-sm mb-4">
+                <div class="card-body">
+                    <h3 class="section-title"><i class="bi bi-calendar-event text-primary"></i> Junho 2026</h3>
+                    <div class="table-responsive">
+                        <table class="table table-bordered text-center calendar-table mb-0">
+                            <thead>
+                                <tr>
+                                    <th>Dom</th><th>Seg</th><th>Ter</th><th>Qua</th><th>Qui</th><th>Sex</th><th>Sáb</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="text-muted">14</td>
+                                    <td>15</td><td>16</td><td>17</td><td>18</td><td>19</td>
+                                    <td class="bg-light">20 <span class="badge-event bg-primary" title="Evento"></span></td>
+                                </tr>
+                                <tr>
+                                    <td class="bg-light">21</td>
+                                    <td>22</td><td>23</td><td>24</td>
+                                    <td class="bg-warning-subtle fw-bold">25 <span class="badge-event bg-success" title="Prazo"></span></td>
+                                    <td>26</td><td>27</td>
+                                </tr>
+                                <tr>
+                                    <td class="bg-light">28</td>
+                                    <td>29</td>
+                                    <td class="bg-info-subtle">30 <span class="badge-event bg-orange" style="background-color: #fd7e14;"></span></td>
+                                    <td class="text-muted">1</td><td class="text-muted">2</td><td class="text-muted">3</td><td class="text-muted">4</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="mt-3 d-flex gap-3 flex-wrap">
+                        <small><span class="badge-event bg-primary"></span> Aula Extra</small>
+                        <small><span class="badge-event bg-success"></span> Entrega Trabalho</small>
+                        <small><span class="badge-event" style="background-color: #fd7e14;"></span> Prova</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card shadow-sm mb-4">
+                <div class="card-body">
+                    <h3 class="section-title"><i class="bi bi-megaphone text-danger"></i> Avisos Importantes</h3>
+                    
+                    <div sec:authorize="hasAnyRole('REPRESENTANTE','PROFESSOR','ADMIN')" class="mb-4">
+                        <a href="/aviso/novo" class="btn btn-primary rounded-pill px-4 shadow-sm fw-medium">
+                            <i class="bi bi-plus-lg me-2"></i> Novo Aviso
+                        </a>
+                    </div>
+                    
+                    <div th:if="${#lists.isEmpty(avisos)}" class="text-center py-4">
+                        <i class="bi bi-chat-dots text-muted display-4 d-block mb-2"></i>
+                        <p class="text-muted">Nenhum aviso cadastrado no momento.</p>
+                    </div>
+
+                    <div th:each="aviso : ${avisos}" class="alert alert-light border-start border-danger border-3 mb-3">
+                        <div sec:authorize="hasAnyRole('REPRESENTANTE','PROFESSOR','ADMIN')" class="d-flex gap-2 mb-2">
+                            <a th:href="@{/aviso/editar/{id}(id=${aviso.id})}" class="btn btn-sm btn-light text-primary rounded-pill px-3 border shadow-sm action-btn">
+                                <i class="bi bi-pencil-square me-1"></i> Editar
+                            </a>
+                            <a th:href="@{/aviso/excluir/{id}(id=${aviso.id})}" class="btn btn-sm btn-light text-danger rounded-pill px-3 border shadow-sm action-btn" onclick="return confirm('Deseja realmente excluir este aviso?')">
+                                <i class="bi bi-trash3 me-1"></i> Excluir
+                            </a>
+                        </div>
+                        <h5 class="fw-bold text-dark mb-1" th:text="${aviso.titulo}">Título do Aviso</h5>
+                        <p class="mb-0 text-muted" th:text="${aviso.descricao}">Descrição detalhada do aviso acadêmico para a turma.</p>
+                   
+                    </div>
+                    
+                    
+                </div>
+            </div>
+
+            <h3 class="section-title mt-5"><i class="bi bi-journal-bookmark-fill text-success"></i> Disciplinas Ativas</h3>
+
+            <div sec:authorize="hasAnyRole('REPRESENTANTE','ADMIN')" class="mb-4">
+                <a href="/disciplina/nova" class="btn btn-primary rounded-pill px-4 shadow-sm fw-medium">
+                    <i class="bi bi-plus-lg me-2"></i> Nova Disciplina
+                </a>
+            </div>
+            
+            <div class="row g-3">
+                <div class="col-md-6" th:each="disciplina : ${disciplinas}">
+                    <div class="card shadow-sm h-100 border-top border-success border-3">
+                        <div class="card-body">
+
+                            <div sec:authorize="hasAnyRole('REPRESENTANTE','ADMIN')" class="d-flex justify-content-end gap-2 mb-3">
+                                <a th:href="@{/disciplina/editar/{id}(id=${disciplina.id})}" class="btn btn-sm btn-light text-primary rounded-pill px-3 border shadow-sm action-btn">
+                                    <i class="bi bi-pencil-square me-1"></i> Editar
+                                </a>
+                                <a th:href="@{/disciplina/excluir/{id}(id=${disciplina.id})}" class="btn btn-sm btn-light text-danger rounded-pill px-3 border shadow-sm action-btn" onclick="return confirm('Deseja realmente excluir esta disciplina?')">
+                                    <i class="bi bi-trash3 me-1"></i> Excluir
+                                </a>
+                            </div>
+
+                            <h5 class="fw-bold mb-3" th:text="${disciplina.nome}"></h5>
+
+                            <ul class="list-unstyled mb-0">
+                                <li class="mb-2">
+                                    <small class="text-muted d-block">Professor</small>
+                                    <span class="fw-medium">
+                                        <i class="bi bi-person-badge me-2"></i>
+                                        <span th:text="${disciplina.professor}"></span>
+                                    </span>
+                                </li>
+                                <li class="mb-2">
+                                    <small class="text-muted d-block">Email</small>
+                                    <a th:href="'mailto:' + ${disciplina.emailProfessor}" class="text-decoration-none">
+                                        <i class="bi bi-envelope me-2"></i>
+                                        <span th:text="${disciplina.emailProfessor}"></span>
+                                    </a>
+                                </li>
+                                <li class="mb-2">
+                                    <small class="text-muted d-block">Classroom</small>
+                                    <span class="badge bg-light text-dark border">
+                                        <i class="bi bi-google me-2"></i>
+                                        <span th:text="${disciplina.codigoClassroom}"></span>
+                                    </span>
+                                </li>
+                                <li>
+                                    <small class="text-muted d-block">Horário</small>
+                                    <span class="text-primary fw-semibold">
+                                        <i class="bi bi-clock me-2"></i>
+                                        <span th:text="${disciplina.horario}"></span>
+                                    </span>
+                                </li>
+                            </ul>
+
+                            <div class="mt-3"
+     th:if="${disciplina.ementa != null and !disciplina.ementa.isBlank()}">
+
+    <button
+        class="btn btn-outline-success btn-sm rounded-pill"
+        type="button"
+        data-bs-toggle="collapse"
+        th:attr="data-bs-target='#ementa-' + ${disciplina.id}">
+
+        📖 Ementa
+
+    </button>
+
+    <div class="collapse mt-3"
+         th:id="'ementa-' + ${disciplina.id}">
+
+        <div class="card card-body bg-light border-success">
+
+            <p class="mb-0"
+               th:text="${disciplina.ementa}">
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-5">
+            
+            <div class="card shadow-sm mb-4">
+                <div class="card-body">
+                    <h3 class="section-title">📅 Próximos Prazos</h3>
+
+                    <div sec:authorize="hasAnyRole('REPRESENTANTE','PROFESSOR','ADMIN')" class="mb-4">
+                        <a href="/evento/novo" class="btn btn-primary rounded-pill px-4 shadow-sm fw-medium">
+                            <i class="bi bi-plus-lg me-2"></i> Novo Evento
+                        </a>
+                    </div>
+
+                    <div th:if="${#lists.isEmpty(eventos)}">
+                        Nenhum prazo cadastrado.
+                    </div>
+
+                    <div class="border-bottom pb-3 mb-3" th:each="evento : ${eventos}">
+                        <div sec:authorize="hasAnyRole('REPRESENTANTE','PROFESSOR','ADMIN')" class="d-flex gap-2 mb-2">
+                            <a th:href="@{/evento/editar/{id}(id=${evento.id})}" class="btn btn-sm btn-light text-primary rounded-pill px-3 border shadow-sm action-btn">
+                                <i class="bi bi-pencil-square me-1"></i> Editar
+                            </a>
+                            <a th:href="@{/evento/excluir/{id}(id=${evento.id})}" class="btn btn-sm btn-light text-danger rounded-pill px-3 border shadow-sm action-btn" onclick="return confirm('Deseja realmente excluir este evento?')">
+                                <i class="bi bi-trash3 me-1"></i> Excluir
+                            </a>
+                        </div>
+
+                        <h5 class="fw-bold" th:text="${evento.titulo}"></h5>
+                        <!-- STATUS -->
+                         <small class="text-muted">
+    📅 <span th:text="${evento.data}"></span>
+    | <span th:text="${evento.tipo}"></span>
+</small>
+
+<!-- STATUS ENTREGA (ÚNICA FONTE) -->
+<!-- STATUS ENTREGA (MAP CORRETO) -->
+<div class="mt-2">
+
+    <span th:if="${entregas[evento.id] == null}"
+      class="badge bg-warning text-dark">
+    PENDENTE
+</span>
+
+<span th:if="${entregas[evento.id] != null and entregas[evento.id].status.name() == 'ENTREGUE'}"
+      class="badge bg-success">
+    ENTREGUE
+</span>
+
+<span th:if="${entregas[evento.id] != null and entregas[evento.id].status.name() == 'ATRASADO'}"
+      class="badge bg-danger">
+    ATRASADO
+</span>
+
+</div>
+
+<!-- BOTÃO ENTREGAR (CORRETO E ÚNICO) -->
+<div class="mt-2">
+
+    <a th:if="${entregas[evento.id] == null}"
+       th:href="@{/evento/entregar/{id}(id=${evento.id})}"
+       class="btn btn-success btn-sm">
+
+        <i class="bi bi-check-circle"></i>
+        Entregar
+    </a>
+
+    <span th:if="${entregas[evento.id] != null}"
+          class="text-success fw-bold">
+
+        ✔ Já entregue
+    </span>
+
+</div>
+
+                        <small class="text-muted">
+                            📅 <span th:text="${evento.data}"></span> | <span th:text="${evento.tipo}"></span>
+                        </small>
+
+                        <div class="mt-2" th:if="${evento.observacoes != null and !evento.observacoes.isEmpty()}">
+                            <small class="text-muted">
+                                <strong>Obs:</strong>
+                                <span th:text="${evento.observacoes}"></span>
+                            </small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="card shadow-sm mb-4 bg-ia">
+                <div class="card-body">
+                    <h3 class="section-title"><i class="bi bi-robot text-indigo" style="color: #6366f1;"></i> Recursos de IA</h3>
+                    <div class="list-group list-group-flush bg-transparent">
+                        <a href="https://chatgpt.com" target="_blank" class="list-group-item list-group-item-action bg-transparent px-0 border-0">
+                            <h6 class="fw-bold mb-1">ChatGPT</h6>
+                            <small class="text-muted">Pesquisas, explicações e resolução de exercícios.</small>
+                        </a>
+                        <a href="https://gemini.google.com" target="_blank" class="list-group-item list-group-item-action bg-transparent px-0 border-0">
+                            <h6 class="fw-bold mb-1">Google Gemini</h6>
+                            <small class="text-muted">Resumos, geração de ideias e dúvidas acadêmicas.</small>
+                        </a>
+                        <a href="https://www.perplexity.ai" target="_blank" class="list-group-item list-group-item-action bg-transparent px-0 border-0">
+                            <h6 class="fw-bold mb-1">Perplexity AI</h6>
+                            <small class="text-muted">Pesquisa com fontes citadas em tempo real.</small>
+                        </a>
+                        <a href="https://gamma.app" target="_blank" class="list-group-item list-group-item-action bg-transparent px-0 border-0">
+                            <h6 class="fw-bold mb-1">Gamma</h6>
+                            <small class="text-muted">Geração automática de apresentações e documentos.</small>
+                        </a>
+                        <a href="https://www.wolframalpha.com" target="_blank" class="list-group-item list-group-item-action bg-transparent px-0 border-0">
+                            <h6 class="fw-bold mb-1">Wolfram Alpha</h6>
+                            <small class="text-muted">Cálculos matemáticos e soluções passo a passo.</small>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h3 class="section-title"><i class="bi bi-link-45deg text-primary"></i> Links Rápidos</h3>
+
+                    <div sec:authorize="hasAnyRole('REPRESENTANTE','ADMIN')" class="mb-4">
+                        <a href="/link/novo" class="btn btn-primary rounded-pill px-4 shadow-sm fw-medium">
+                            <i class="bi bi-plus-lg me-2"></i> Novo Link
+                        </a>
+                    </div>
+                    
+                    <div th:if="${#lists.isEmpty(linksRapidos)}" class="text-muted small">
+                        Nenhum link configurado.
+                    </div>
+
+                    <div th:each="link : ${linksRapidos}">
+                        <div sec:authorize="hasAnyRole('REPRESENTANTE','ADMIN')" class="d-flex gap-2 mb-2">
+                            <a th:href="@{/link/editar/{id}(id=${link.id})}" class="btn btn-sm btn-light text-primary rounded-pill px-3 border shadow-sm action-btn">
+                                <i class="bi bi-pencil-square me-1"></i> Editar
+                            </a>
+                            <a th:href="@{/link/excluir/{id}(id=${link.id})}" class="btn btn-sm btn-light text-danger rounded-pill px-3 border shadow-sm action-btn" onclick="return confirm('Deseja realmente excluir este link?')">
+                                <i class="bi bi-trash3 me-1"></i> Excluir
+                            </a>
+                        </div>
+                        <a th:href="${link.url}" target="_blank" class="btn btn-outline-primary w-100 btn-quick-link mb-2">
+                            <span th:text="${link.nome}">Portal do Aluno</span>
+                            <i class="bi bi-arrow-up-right-circle"></i>
+                        </a>
+                    </div>
+                    
+                    <div th:if="${#lists.isEmpty(linksRapidos)}">
+                        <a href="#" class="btn btn-outline-primary w-100 btn-quick-link mb-2">
+                            <span>Portal do Aluno</span>
+                            <i class="bi bi-arrow-up-right-circle"></i>
+                        </a>
+                        <a href="#" class="btn btn-outline-primary w-100 btn-quick-link mb-2">
+                            <span>Biblioteca Digital</span>
+                            <i class="bi bi-arrow-up-right-circle"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div th:replace="~{fragments/toasts :: toasts}"></div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll(".toast").forEach(function(el) {
+        new bootstrap.Toast(el, {
+            delay: 3000
+        }).show();
+    });
+});
+</script>
+
+</body>
+</html>

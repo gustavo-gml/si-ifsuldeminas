@@ -1,0 +1,55 @@
+/* Configuração da página inteira */
+body {
+    /* DESAFIO 7 RESOLVIDO: Cor de fundo alterada para um cinza claro */
+    background-color: #f0f2f5;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Estilo do cabeçalho */
+.cabecalho {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* Estilo da sua foto de perfil */
+img {
+    width: 150px;
+    border-radius: 50%;
+    /* DESAFIO 8 RESOLVIDO: Borda sólida azul adicionada */
+    border: 4px solid #0056b3;
+}
+
+/* Estilo das seções de conteúdo (Caixas) */
+.secao {
+    background-color: white;
+    
+    /* DESAFIO 9 RESOLVIDO: Box Model aplicado! */
+    padding: 20px;           /* Dá um "respiro" interno na caixa branca */
+    margin: 20px auto;       /* Separa uma caixa da outra e centraliza na tela */
+    border-radius: 12px;     /* Arredonda as pontas da caixa */
+    
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Estilizando o botão */
+button {
+    /* DESAFIO 10 RESOLVIDO: Fundo azul e texto branco */
+    background-color: #0056b3;
+    color: white;
+    
+    padding: 12px 24px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Um toque extra: efeito ao passar o mouse no botão */
+button:hover {
+    background-color: #004494;
+}

@@ -1,0 +1,25 @@
+<project name="ProjetoManual" default="rodar">
+
+    <target name="compilar">
+        <mkdir dir="build"/>
+        <javac srcdir="src" destdir="build" includeantruntime="false">
+            <classpath>
+                <fileset dir="lib" includes="*.jar"/>
+            </classpath>
+        </javac>
+    </target>
+
+    <target name="rodar" depends="compilar">
+        <java classname="Main" classpath="build">
+            <classpath>
+                <fileset dir="lib" includes="*.jar"/>
+            </classpath>
+        </java>
+    </target>
+
+    <target name="limpar">
+        <delete dir="build"/>
+    </target>
+
+</project>
+

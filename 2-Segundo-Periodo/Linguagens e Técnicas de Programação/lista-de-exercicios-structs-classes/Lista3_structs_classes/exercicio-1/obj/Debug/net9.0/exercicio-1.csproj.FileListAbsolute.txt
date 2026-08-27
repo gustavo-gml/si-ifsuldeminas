@@ -1,0 +1,15 @@
+C:\atividades_matheus_sistemas\lista-de-exercicios-structs-classes\Lista3_structs_classes\exercicio-1\bin\Debug\net9.0\exercicio-1.exe
+C:\atividades_matheus_sistemas\lista-de-exercicios-structs-classes\Lista3_structs_classes\exercicio-1\bin\Debug\net9.0\exercicio-1.deps.json
+C:\atividades_matheus_sistemas\lista-de-exercicios-structs-classes\Lista3_structs_classes\exercicio-1\bin\Debug\net9.0\exercicio-1.runtimeconfig.json
+C:\atividades_matheus_sistemas\lista-de-exercicios-structs-classes\Lista3_structs_classes\exercicio-1\bin\Debug\net9.0\exercicio-1.dll
+C:\atividades_matheus_sistemas\lista-de-exercicios-structs-classes\Lista3_structs_classes\exercicio-1\bin\Debug\net9.0\exercicio-1.pdb
+C:\atividades_matheus_sistemas\lista-de-exercicios-structs-classes\Lista3_structs_classes\exercicio-1\obj\Debug\net9.0\exercicio-1.GeneratedMSBuildEditorConfig.editorconfig
+C:\atividades_matheus_sistemas\lista-de-exercicios-structs-classes\Lista3_structs_classes\exercicio-1\obj\Debug\net9.0\exercicio-1.AssemblyInfoInputs.cache
+C:\atividades_matheus_sistemas\lista-de-exercicios-structs-classes\Lista3_structs_classes\exercicio-1\obj\Debug\net9.0\exercicio-1.AssemblyInfo.cs
+C:\atividades_matheus_sistemas\lista-de-exercicios-structs-classes\Lista3_structs_classes\exercicio-1\obj\Debug\net9.0\exercicio-1.csproj.CoreCompileInputs.cache
+C:\atividades_matheus_sistemas\lista-de-exercicios-structs-classes\Lista3_structs_classes\exercicio-1\obj\Debug\net9.0\exercicio-1.sourcelink.json
+C:\atividades_matheus_sistemas\lista-de-exercicios-structs-classes\Lista3_structs_classes\exercicio-1\obj\Debug\net9.0\exercicio-1.dll
+C:\atividades_matheus_sistemas\lista-de-exercicios-structs-classes\Lista3_structs_classes\exercicio-1\obj\Debug\net9.0\refint\exercicio-1.dll
+C:\atividades_matheus_sistemas\lista-de-exercicios-structs-classes\Lista3_structs_classes\exercicio-1\obj\Debug\net9.0\exercicio-1.pdb
+C:\atividades_matheus_sistemas\lista-de-exercicios-structs-classes\Lista3_structs_classes\exercicio-1\obj\Debug\net9.0\exercicio-1.genruntimeconfig.cache
+C:\atividades_matheus_sistemas\lista-de-exercicios-structs-classes\Lista3_structs_classes\exercicio-1\obj\Debug\net9.0\ref\exercicio-1.dll

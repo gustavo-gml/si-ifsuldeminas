@@ -1,0 +1,14 @@
+C:\atividades_matheus_sistemas\pre-prova1\bin\Debug\net9.0\pre-prova1.exe
+C:\atividades_matheus_sistemas\pre-prova1\bin\Debug\net9.0\pre-prova1.deps.json
+C:\atividades_matheus_sistemas\pre-prova1\bin\Debug\net9.0\pre-prova1.runtimeconfig.json
+C:\atividades_matheus_sistemas\pre-prova1\bin\Debug\net9.0\pre-prova1.dll
+C:\atividades_matheus_sistemas\pre-prova1\bin\Debug\net9.0\pre-prova1.pdb
+C:\atividades_matheus_sistemas\pre-prova1\obj\Debug\net9.0\pre-prova1.GeneratedMSBuildEditorConfig.editorconfig
+C:\atividades_matheus_sistemas\pre-prova1\obj\Debug\net9.0\pre-prova1.AssemblyInfoInputs.cache
+C:\atividades_matheus_sistemas\pre-prova1\obj\Debug\net9.0\pre-prova1.AssemblyInfo.cs
+C:\atividades_matheus_sistemas\pre-prova1\obj\Debug\net9.0\pre-prova1.csproj.CoreCompileInputs.cache
+C:\atividades_matheus_sistemas\pre-prova1\obj\Debug\net9.0\pre-prova1.dll
+C:\atividades_matheus_sistemas\pre-prova1\obj\Debug\net9.0\refint\pre-prova1.dll
+C:\atividades_matheus_sistemas\pre-prova1\obj\Debug\net9.0\pre-prova1.pdb
+C:\atividades_matheus_sistemas\pre-prova1\obj\Debug\net9.0\pre-prova1.genruntimeconfig.cache
+C:\atividades_matheus_sistemas\pre-prova1\obj\Debug\net9.0\ref\pre-prova1.dll

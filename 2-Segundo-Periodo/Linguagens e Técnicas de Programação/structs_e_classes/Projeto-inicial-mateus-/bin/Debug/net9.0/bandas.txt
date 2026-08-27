@@ -1,0 +1,2 @@
+Metalica,roc,3,1
+Legiao Rural,Rock,4,2

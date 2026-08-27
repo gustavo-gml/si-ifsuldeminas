@@ -1,0 +1,27 @@
+# --- IntelliJ / JetBrains ---
+.idea/
+*.iml
+out/
+gen/
+
+# --- Compilados (Java) ---
+*.class
+*.jar
+*.war
+*.ear
+
+# --- Maven (se usar) ---
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+release.properties
+
+# --- Gradle (se usar) ---
+.gradle/
+build/
+bin/
+
+# --- Arquivos de Sistema / Logs ---
+*.log
+.DS_Store
+Thumbs.db

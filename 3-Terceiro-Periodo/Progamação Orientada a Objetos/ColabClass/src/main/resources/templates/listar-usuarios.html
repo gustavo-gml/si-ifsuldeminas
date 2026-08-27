@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Usuários | ColabClass</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f9fa;
+        }
+        .btn {
+            min-height: 44px;
+            border-radius: 12px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-weight: 500;
+        }
+        .table-container {
+            border-radius: 16px;
+            overflow: hidden;
+        }
+        .table th, .table td {
+            vertical-align: middle;
+            padding: 1rem;
+            white-space: nowrap;
+        }
+    </style>
+</head>
+<body class="bg-light d-flex flex-column min-vh-100">
+
+<div th:replace="~{fragments/navbar :: navbar}"></div>
+<div th:replace="~{fragments/alertas :: alertas}"></div>
+
+<div class="container mt-4 mb-5 flex-grow-1">
+
+    <div class="d-flex flex-column flex-sm-row justify-content-between align-items-sm-center gap-3 mb-4">
+        <h2 class="h3 fw-bold mb-0 text-dark d-flex align-items-center gap-2">
+            <i class="bi bi-people-fill text-primary"></i> Usuários
+        </h2>
+
+        <a href="/admin" class="btn btn-secondary w-100 w-sm-auto shadow-sm">
+            <i class="bi bi-arrow-left"></i> Voltar
+        </a>
+    </div>
+
+    <div class="table-container shadow-sm border bg-white">
+        <div class="table-responsive">
+            <table class="table table-hover mb-0">
+                <thead class="table-light text-secondary">
+                    <tr>
+                        <th class="fw-semibold border-bottom-0">Nome</th>
+                        <th class="fw-semibold border-bottom-0">Email</th>
+                        <th class="fw-semibold border-bottom-0">Perfil</th>
+                        <th class="fw-semibold border-bottom-0">Turma</th>
+                        <th class="fw-semibold border-bottom-0 text-center">Alterar Perfil</th>
+                        <th class="fw-semibold border-bottom-0 text-center">Murais</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="usuario : ${usuarios}">
+                        
+                        <td class="fw-bold text-dark">
+                            <i class="bi bi-person-circle text-muted me-1"></i> <span th:text="${usuario.nome}"></span>
+                        </td>
+                        
+                        <td>
+                            <a th:href="'mailto:' + ${usuario.email}" class="text-decoration-none">
+                                <i class="bi bi-envelope"></i> <span th:text="${usuario.email}"></span>
+                            </a>
+                        </td>
+                        
+                        <td>
+                            <span class="badge bg-primary-subtle text-primary border" th:text="${usuario.role}"></span>
+                        </td>
+                        
+                        <td>
+                            <span class="badge bg-light text-dark border" th:text="${usuario.turma != null ? usuario.turma.nome : '-'}"></span>
+                        </td>
+                        
+                        <td>
+                            <div class="d-flex gap-2 justify-content-sm-center flex-wrap">
+                                <a th:href="@{/usuario/representante/{id}(id=${usuario.id})}" class="btn btn-warning btn-sm flex-grow-1 flex-sm-grow-0" title="Tornar Representante">
+                                    <i class="bi bi-star-fill"></i> <span class="d-inline d-lg-none ms-1">Representante</span>
+                                </a>
+                                <a th:href="@{/usuario/admin/{id}(id=${usuario.id})}" class="btn btn-danger btn-sm flex-grow-1 flex-sm-grow-0" title="Tornar Admin">
+                                    <i class="bi bi-shield-lock-fill"></i> <span class="d-inline d-lg-none ms-1">Admin</span>
+                                </a>
+                                <a th:href="@{/usuario/aluno/{id}(id=${usuario.id})}" class="btn btn-secondary btn-sm flex-grow-1 flex-sm-grow-0" title="Tornar Aluno">
+                                    <i class="bi bi-person-fill"></i> <span class="d-inline d-lg-none ms-1">Aluno</span>
+                                </a>
+                                <a th:href="@{/usuario/professor/{id}(id=${usuario.id})}" class="btn btn-info text-white btn-sm flex-grow-1 flex-sm-grow-0" title="Tornar Professor">
+                                    <i class="bi bi-mortarboard-fill"></i> <span class="d-inline d-lg-none ms-1">Professor</span>
+                                </a>
+                            </div>
+                        </td>
+
+                        <td class="text-center">
+                            <a th:if="${usuario.role.name() == 'PROFESSOR'}" 
+                               th:href="@{/usuario/{id}/murais(id=${usuario.id})}" 
+                               class="btn btn-outline-primary btn-sm flex-grow-1 flex-sm-grow-0">
+                                <i class="bi bi-layout-text-window"></i> <span class="d-inline d-lg-none ms-1">Gerenciar</span>
+                            </a>
+                            <span th:unless="${usuario.role.name() == 'PROFESSOR'}" class="text-muted fw-bold opacity-50">
+                                —
+                            </span>
+                        </td>
+                        
+                    </tr>
+                    
+                    <tr th:if="${#lists.isEmpty(usuarios)}">
+                        <td colspan="6" class="text-center py-4 text-muted">Nenhum usuário encontrado.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

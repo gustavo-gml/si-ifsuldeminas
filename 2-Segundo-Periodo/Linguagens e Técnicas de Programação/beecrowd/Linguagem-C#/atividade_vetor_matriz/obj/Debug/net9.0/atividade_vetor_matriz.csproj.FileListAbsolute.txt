@@ -1,0 +1,15 @@
+C:\atividades_matheus_sistemas\beecrowd\Linguagem-C#\atividade_vetor_matriz\obj\Debug\net9.0\atividade_vetor_matriz.GeneratedMSBuildEditorConfig.editorconfig
+C:\atividades_matheus_sistemas\beecrowd\Linguagem-C#\atividade_vetor_matriz\obj\Debug\net9.0\atividade_vetor_matriz.AssemblyInfoInputs.cache
+C:\atividades_matheus_sistemas\beecrowd\Linguagem-C#\atividade_vetor_matriz\obj\Debug\net9.0\atividade_vetor_matriz.AssemblyInfo.cs
+C:\atividades_matheus_sistemas\beecrowd\Linguagem-C#\atividade_vetor_matriz\obj\Debug\net9.0\atividade_vetor_matriz.csproj.CoreCompileInputs.cache
+C:\atividades_matheus_sistemas\beecrowd\Linguagem-C#\atividade_vetor_matriz\obj\Debug\net9.0\atividade_vetor_matriz.sourcelink.json
+C:\atividades_matheus_sistemas\beecrowd\Linguagem-C#\atividade_vetor_matriz\bin\Debug\net9.0\atividade_vetor_matriz.exe
+C:\atividades_matheus_sistemas\beecrowd\Linguagem-C#\atividade_vetor_matriz\bin\Debug\net9.0\atividade_vetor_matriz.deps.json
+C:\atividades_matheus_sistemas\beecrowd\Linguagem-C#\atividade_vetor_matriz\bin\Debug\net9.0\atividade_vetor_matriz.runtimeconfig.json
+C:\atividades_matheus_sistemas\beecrowd\Linguagem-C#\atividade_vetor_matriz\bin\Debug\net9.0\atividade_vetor_matriz.dll
+C:\atividades_matheus_sistemas\beecrowd\Linguagem-C#\atividade_vetor_matriz\bin\Debug\net9.0\atividade_vetor_matriz.pdb
+C:\atividades_matheus_sistemas\beecrowd\Linguagem-C#\atividade_vetor_matriz\obj\Debug\net9.0\atividade_vetor_matriz.dll
+C:\atividades_matheus_sistemas\beecrowd\Linguagem-C#\atividade_vetor_matriz\obj\Debug\net9.0\refint\atividade_vetor_matriz.dll
+C:\atividades_matheus_sistemas\beecrowd\Linguagem-C#\atividade_vetor_matriz\obj\Debug\net9.0\atividade_vetor_matriz.pdb
+C:\atividades_matheus_sistemas\beecrowd\Linguagem-C#\atividade_vetor_matriz\obj\Debug\net9.0\atividade_vetor_matriz.genruntimeconfig.cache
+C:\atividades_matheus_sistemas\beecrowd\Linguagem-C#\atividade_vetor_matriz\obj\Debug\net9.0\ref\atividade_vetor_matriz.dll

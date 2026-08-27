@@ -1,0 +1,35 @@
+# Compilados (Java Class files)
+*.class
+*.log
+
+# Pacotes e Executáveis
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# Diretórios de build (Maven/Gradle)
+target/
+bin/
+build/
+out/
+
+# Configurações de IDE (IntelliJ)
+.idea/
+*.iml
+*.iws
+
+# Configurações de IDE (Eclipse)
+.settings/
+.project
+.classpath
+
+# Configurações de IDE (VS Code)
+.vscode/
+
+# Arquivos do Sistema Operacional
+.DS_Store
+Thumbs.db

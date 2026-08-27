@@ -1,0 +1,31 @@
+<project name="ProjetoComIvy" default="rodar" xmlns:ivy="antlib:org.apache.ivy.ant">
+
+    <target name="baixar-dependencias">
+        <echo message="Ivy assumindo o controle: Buscando dependências na internet..."/>
+
+        <ivy:retrieve pattern="lib/[artifact]-[revision].[ext]" type="jar,bundle"/>
+
+    </target>
+
+    <target name="compilar" depends="baixar-dependencias">
+        <mkdir dir="build"/>
+        <javac srcdir="src" destdir="build" includeantruntime="false">
+            <classpath>
+                <fileset dir="lib" includes="*.jar"/>
+            </classpath>
+        </javac>
+    </target>
+
+    <target name="rodar" depends="compilar">
+        <java classname="Main" classpath="build">
+            <classpath>
+                <fileset dir="lib" includes="*.jar"/>
+            </classpath>
+        </java>
+    </target>
+
+    <target name="limpar">
+        <delete dir="build"/>
+        <delete dir="lib"/> </target>
+
+</project>

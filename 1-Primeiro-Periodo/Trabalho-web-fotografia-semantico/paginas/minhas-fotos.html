@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../imagens/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../estilo/style.css">
+    <title>Minhas fotos</title>
+    
+    <style>
+        h1{
+            font-size: 5vw;
+            text-align: center;
+            text-shadow: 4px 3px 10px rgb(147, 8, 185);
+            padding: 1.7%;
+            color: white; 
+        }
+        h2{
+            font-size: 4vw;
+            text-align: center;
+            text-shadow: 4px 3px 10px rgb(147, 8, 185);
+            padding: 1.7%;
+            color: white;
+            
+        
+        }
+        .descricao{
+            text-align: center;
+            width: 50%;
+            margin-top: 2%;
+            margin-bottom: 5%;
+            margin-left: 25%;
+            
+            
+        }
+        img{
+            border: 2px solid #D4AF37;
+            border-radius: 2px;
+            margin: 0% 3% ;
+            min-width: 25%;
+             
+        }
+
+        #foto-grupo {
+        display: flex;
+        justify-content: center;
+        padding: 2%;
+        background-image: url(../imagens/black-bricks-background.jpg)
+        
+        }
+
+        table{
+            width: 80%;
+        }
+
+
+    </style>
+</head>
+<body>
+
+   <header class="nav-bar">
+
+        <a  href="menu.html" class="clic-logo">Clic Wr Filmes</a >
+          
+        <nav class="nav">
+            <a class="link-nav" href="menu.html">Menu</a>
+            <a class="link-nav" href="pacotes.html">Pacotes</a>
+            <a class="nav-active" href="minhas-fotos.html">Minhas Fotos</a>
+            <a href="galeria.html" class="link-nav">Galeria</a>
+            <a class="link-nav" href="sobre-nos.html">Sobre-nós</a>
+            <a class="link-nav" href="../index.html">Sair</a>
+        </nav>
+        
+    </header>
+
+    <Main>
+   
+        <section >
+    <h1>Foto do Grupo</h1>
+
+    <div id="foto-grupo">
+        
+        <img src="../imagens/grupo.jpeg" alt="imagem do grupo">
+
+        <img src="../imagens/discas.jpeg" alt="discord imagem">
+
+    </div>
+   </section>
+
+    
+        <section>
+  
+        <h2>Descrição do trabalho</h2>
+
+    <p class="descricao">Este trabalho foi realizado com o intuito de criar um protótipo de site estático para uma empresa real de fotografia, utilizando HTML e CSS para apresentar os materiais de divulgação e a identidade visual da marca de forma elegante e profissional. </p>
+    
+<table>
+    <tr>
+        <th>Nome</th>
+        <th>Descrição de páginas</th>
+        <th>Quantidade</th>
+    </tr>
+
+    <tr>
+        <td>Gustavo</td>
+        <td>Crud(cadastro), consulta, pacote, sobre-nos, style.</td>
+        <td>5</td>
+    </tr>
+
+    <tr>
+        <td>José</td>
+        <td>Menu, história(minhas fotos), STYLE.</td>
+        <td>3</td>
+    </tr>
+
+    <tr>
+        <td>Tiago</td>
+        <td>Login, cadastro, style.</td>
+        <td>3</td>
+    </tr>    
+</table>
+
+     </section>
+    </Main>
+    
+    <footer class="rodape">
+    <p>&copy; 2025 | Desenvolvido por <strong>Gustavo Martins</strong>, <strong>José Gabriel</strong> e <strong>Tiago Lemes</strong>. Todos os direitos reservados<p>
+  </footer>
+</body>
+</html>

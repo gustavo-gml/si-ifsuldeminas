@@ -1,0 +1,52 @@
+/* Configuração da página inteira */
+body {
+    /* DESAFIO 7: Mude a cor de fundo (background-color) para uma cor que você goste */
+    background-color: #e9ecef;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Estilo do cabeçalho */
+.cabecalho {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* Estilo da sua foto de perfil */
+img {
+    width: 150px;
+    border-radius: 50%;
+    /* DESAFIO 8: Adicione uma borda (border) de 4px sólida na cor da sua preferência */
+    border: ;
+}
+
+/* Estilo das seções de conteúdo (Caixas) */
+.secao {
+    background-color: white;
+    
+    /* DESAFIO 9: O Box Model! 
+       1. Coloque um padding de 20px (espaço dentro da caixa)
+       2. Coloque um margin de 20px auto (espaço fora da caixa)
+       3. Coloque um border-radius de 10px (bordas arredondadas) */
+    padding: ;
+    margin: ;
+    border-radius: ;
+    
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Estilizando o botão */
+button {
+    /* DESAFIO 10: Mude a cor de fundo do botão (background-color) e a cor do texto (color) */
+    background-color: #333;
+    color: white;
+    
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}

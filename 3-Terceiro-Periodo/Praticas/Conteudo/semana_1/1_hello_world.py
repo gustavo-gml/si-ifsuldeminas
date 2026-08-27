@@ -1,0 +1,1 @@
+print("Hello World!") # O comando print mostra uma mensagem na tela

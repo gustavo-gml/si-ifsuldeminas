@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Novo Usuário | ColabClass</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #f8f9fa; }
+        .card { border-radius: 16px; }
+        .form-control, .form-select { border-radius: 12px; min-height: 48px; background-color: #f8f9fa; border: 1px solid #dee2e6; }
+        .form-control:focus, .form-select:focus { background-color: #fff; box-shadow: none; border-color: #0d6efd; }
+        .btn { border-radius: 12px; min-height: 48px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; font-weight: 500; }
+        .form-label { font-weight: 500; color: #495057; font-size: 0.9rem; margin-bottom: 0.25rem; }
+    </style>
+</head>
+<body class="d-flex flex-column min-vh-100">
+
+<div th:replace="~{fragments/navbar :: navbar}"></div>
+<div th:replace="~{fragments/alertas :: alertas}"></div>
+
+<div class="container mt-4 mb-5 flex-grow-1">
+    
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-8 col-lg-6">
+            
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h2 class="h3 fw-bold mb-0 text-dark d-flex align-items-center gap-2">
+                    <i class="bi bi-person-plus-fill text-primary"></i> Criar Conta
+                </h2>
+                <a href="javascript:history.back()" class="btn btn-outline-secondary btn-sm px-3" style="min-height: 38px;">
+                    <i class="bi bi-x-lg"></i> Cancelar
+                </a>
+            </div>
+
+            <div class="card shadow-sm border-0">
+                <div class="card-body p-4 p-md-5">
+                    
+                    <form th:action="@{/usuario/salvar}" th:object="${usuario}" method="post">
+                        
+                        <div class="row g-3">
+                            
+                            <div class="col-12">
+                                <label class="form-label">Nome Completo</label>
+                                <input type="text" class="form-control" th:field="*{nome}" placeholder="Ex: João da Silva" required>
+                            </div>
+
+                            <div class="col-12">
+                                <label class="form-label">Email</label>
+                                <input type="email" class="form-control" th:field="*{email}" placeholder="seu@email.com" required>
+                            </div>
+
+                            <div class="col-12">
+                                <label class="form-label">Senha</label>
+                                <input type="password" class="form-control" th:field="*{senha}" placeholder="Crie uma senha forte" required>
+                            </div>
+
+                            <div class="col-12">
+                                <label class="form-label">Turma</label>
+                                <select class="form-select" th:field="*{turma}" required>
+                                    <option value="" disabled selected>Selecione sua turma...</option>
+                                    <option th:each="turma : ${turmas}" th:value="${turma.id}" th:text="${turma.nome}"></option>
+                                </select>
+                            </div>
+
+                        </div>
+
+                        <hr class="text-muted my-4">
+
+                        <button type="submit" class="btn btn-primary w-100 btn-lg shadow-sm">
+                            <i class="bi bi-check-circle"></i> Cadastrar
+                        </button>
+
+                    </form>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

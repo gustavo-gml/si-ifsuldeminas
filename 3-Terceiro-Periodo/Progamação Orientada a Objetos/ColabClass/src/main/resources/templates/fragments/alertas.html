@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+
+<div th:fragment="alertas">
+
+    <div
+        th:if="${param.sucesso}"
+        class="alert alert-success alert-dismissible fade show">
+
+        ✅ Operação realizada com sucesso!
+
+        <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="alert">
+        </button>
+
+    </div>
+
+    <div
+        th:if="${param.editado}"
+        class="alert alert-primary alert-dismissible fade show">
+
+        ✏ Registro atualizado com sucesso!
+
+        <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="alert">
+        </button>
+
+    </div>
+
+    <div
+        th:if="${param.excluido}"
+        class="alert alert-danger alert-dismissible fade show">
+
+        🗑 Registro removido com sucesso!
+
+        <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="alert">
+        </button>
+
+    </div>
+
+    <div
+        th:if="${param.erro}"
+        class="alert alert-warning alert-dismissible fade show">
+
+        ⚠ Ocorreu um erro!
+
+        <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="alert">
+        </button>
+
+    </div>
+
+</div>
+
+</body>
+</html>

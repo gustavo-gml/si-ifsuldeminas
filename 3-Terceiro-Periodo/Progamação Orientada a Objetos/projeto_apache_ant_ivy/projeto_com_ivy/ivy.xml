@@ -1,0 +1,7 @@
+<ivy-module version="2.0">
+    <info organisation="com.ifsuldeminas" module="demo-ivy-jackson"/>
+
+    <dependencies>
+        <dependency org="com.fasterxml.jackson.core" name="jackson-databind" rev="2.15.2" conf="default->default"/>
+    </dependencies>
+</ivy-module>

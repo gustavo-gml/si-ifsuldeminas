@@ -1,0 +1,2 @@
+Mario,snes,1233,1,Nulo,Nulo,N
+Mamaco,snes,2,2,0,Nulo,N

@@ -1,0 +1,15 @@
+C:\atividades_matheus_sistemas\lista-de-exercicios-structs-classes-cs\exercicio-4\bin\Debug\net10.0\exercicio-4.exe
+C:\atividades_matheus_sistemas\lista-de-exercicios-structs-classes-cs\exercicio-4\bin\Debug\net10.0\exercicio-4.deps.json
+C:\atividades_matheus_sistemas\lista-de-exercicios-structs-classes-cs\exercicio-4\bin\Debug\net10.0\exercicio-4.runtimeconfig.json
+C:\atividades_matheus_sistemas\lista-de-exercicios-structs-classes-cs\exercicio-4\bin\Debug\net10.0\exercicio-4.dll
+C:\atividades_matheus_sistemas\lista-de-exercicios-structs-classes-cs\exercicio-4\bin\Debug\net10.0\exercicio-4.pdb
+C:\atividades_matheus_sistemas\lista-de-exercicios-structs-classes-cs\exercicio-4\obj\Debug\net10.0\exercicio-4.GeneratedMSBuildEditorConfig.editorconfig
+C:\atividades_matheus_sistemas\lista-de-exercicios-structs-classes-cs\exercicio-4\obj\Debug\net10.0\exercicio-4.AssemblyInfoInputs.cache
+C:\atividades_matheus_sistemas\lista-de-exercicios-structs-classes-cs\exercicio-4\obj\Debug\net10.0\exercicio-4.AssemblyInfo.cs
+C:\atividades_matheus_sistemas\lista-de-exercicios-structs-classes-cs\exercicio-4\obj\Debug\net10.0\exercicio-4.csproj.CoreCompileInputs.cache
+C:\atividades_matheus_sistemas\lista-de-exercicios-structs-classes-cs\exercicio-4\obj\Debug\net10.0\exercicio-4.sourcelink.json
+C:\atividades_matheus_sistemas\lista-de-exercicios-structs-classes-cs\exercicio-4\obj\Debug\net10.0\exercicio-4.dll
+C:\atividades_matheus_sistemas\lista-de-exercicios-structs-classes-cs\exercicio-4\obj\Debug\net10.0\refint\exercicio-4.dll
+C:\atividades_matheus_sistemas\lista-de-exercicios-structs-classes-cs\exercicio-4\obj\Debug\net10.0\exercicio-4.pdb
+C:\atividades_matheus_sistemas\lista-de-exercicios-structs-classes-cs\exercicio-4\obj\Debug\net10.0\exercicio-4.genruntimeconfig.cache
+C:\atividades_matheus_sistemas\lista-de-exercicios-structs-classes-cs\exercicio-4\obj\Debug\net10.0\ref\exercicio-4.dll

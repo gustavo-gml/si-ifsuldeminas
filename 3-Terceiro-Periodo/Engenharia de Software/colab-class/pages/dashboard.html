@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ColabClass - Dashboard do Aluno</title>
+    <link rel="stylesheet" href="../styles/style.css">
+
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+</head>
+
+<body>
+
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="logo">
+                <div class="logo-icon"></div>
+                <span class="logo-text">ColabClass</span>
+            </div>
+            <button id="toggle-sidebar" class="toggle-btn" title="Minimizar Menu">☰</button>
+        </div>
+
+        <nav>
+            <ul class="nav-menu">
+                <li class="nav-item active">
+                    <a href="#">
+                        <span class="material-symbols-outlined nav-icon">home</span>
+                        <span class="nav-text">Início (Dashboard)</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="pages/disciplinas.html">
+                        <span class="material-symbols-outlined nav-icon">book</span>
+                        <span class="nav-text">Minhas Disciplinas</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="pages/agenda.html">
+                        <span class="material-symbols-outlined nav-icon">calendar_month</span>
+                        <span class="nav-text">Agenda Acadêmica</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="pages/tarefas.html">
+                        <span class="material-symbols-outlined nav-icon">task_alt</span>
+                        <span class="nav-text">Tarefas Pessoais</span>
+                    </a>
+                </li>
+                <li class="nav-item config-item">
+                    <a href="pages/configuracoes.html">
+                        <span class="material-symbols-outlined nav-icon">settings</span>
+                        <span class="nav-text">Configurações</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+
+    <main class="main-container">
+
+        <header class="top-header">
+            <div class="header-left">
+                <h1 class="page-title">Meu Painel</h1>
+            </div>
+            <div class="user-info">
+                <button class="notification-btn" aria-label="Notificações">
+                    🔔 <span class="badge">2</span>
+                </button>
+                <div class="user-profile">
+                    <span class="user-name">Olá, João Silva</span>
+                </div>
+            </div>
+        </header>
+
+        <div class="content">
+            <section class="stats-row">
+                <article class="stat-card">
+                    <h2 class="stat-label">Frequência Global</h2>
+                    <p class="stat-value">85%</p>
+                </article>
+                <article class="stat-card">
+                    <h2 class="stat-label">Média Geral</h2>
+                    <p class="stat-value">8.0</p>
+                </article>
+                <article class="stat-card">
+                    <h2 class="stat-label">Disciplinas Ativas</h2>
+                    <p class="stat-value">6</p>
+                </article>
+            </section>
+
+            <div class="dashboard-grid">
+                <section class="dashboard-column">
+                    <h2 class="section-title">🚨 Prioridades (Próximos 3 dias)</h2>
+                    <div class="card">
+                        <ul class="priority-list">
+                            <li class="priority-item">
+                                <div class="status-dot dot-urgent" title="Urgente"></div>
+                                <div class="item-info">
+                                    <h3 class="item-title">Trabalho: Programação Orientada a Objetos</h3>
+                                    <p class="item-meta">Vence: Amanhã às 23:59</p>
+                                </div>
+                            </li>
+                            <li class="priority-item">
+                                <div class="status-dot dot-warning" title="Atenção"></div>
+                                <div class="item-info">
+                                    <h3 class="item-title">Prova: Banco de Dados</h3>
+                                    <p class="item-meta">Data: 02/05 (Faltam 3 dias)</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section class="dashboard-column">
+                    <h2 class="section-title">📌 Pendências Rápidas</h2>
+                    <div class="card">
+                        <ul class="task-list">
+                            <li class="task-item">
+                                <input type="checkbox" id="task1" class="task-checkbox">
+                                <label for="task1">Marcar como lido: Artigo de Redes</label>
+                            </li>
+                            <li class="task-item">
+                                <input type="checkbox" id="task2" class="task-checkbox">
+                                <label for="task2">Entregar lista de exercícios (POO)</label>
+                            </li>
+                            <li class="task-item">
+                                <input type="checkbox" id="task3" class="task-checkbox">
+                                <label for="task3">Estudar Normalização (BD)</label>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <script src="../scripts/views/SidebarView.js"></script>
+    <script src="../scripts/controller/SidebarController.js"></script>
+</body>
+
+</html>

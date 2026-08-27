@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v9.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v9.0": {
+      "pre-prova1/1.0.0": {
+        "runtime": {
+          "pre-prova1.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "pre-prova1/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

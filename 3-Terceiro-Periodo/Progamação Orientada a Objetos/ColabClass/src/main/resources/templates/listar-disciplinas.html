@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Disciplinas | ColabClass</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f9fa;
+        }
+        /* Altura mínima para toque no mobile (44px) */
+        .btn, .mobile-action-btn {
+            min-height: 44px;
+            border-radius: 12px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-weight: 500;
+        }
+        .table-container {
+            border-radius: 16px;
+            overflow: hidden;
+        }
+        .table th, .table td {
+            vertical-align: middle;
+            padding: 1rem;
+        }
+    </style>
+</head>
+<body class="bg-light d-flex flex-column min-vh-100">
+
+<div th:replace="~{fragments/navbar :: navbar}"></div>
+
+<div class="container mt-4 mb-5 flex-grow-1">
+
+    <div class="d-flex flex-column flex-sm-row justify-content-between align-items-sm-center gap-3 mb-4">
+        <h2 class="h3 fw-bold mb-0 text-dark d-flex align-items-center gap-2">
+            <i class="bi bi-journal-bookmark-fill text-success"></i> Disciplinas
+        </h2>
+
+        <div class="d-flex flex-column flex-sm-row gap-2">
+            <a href="/admin" class="btn btn-secondary w-100 w-sm-auto shadow-sm">
+                <i class="bi bi-arrow-left"></i> Voltar
+            </a>
+            <a href="/disciplina/nova" class="btn btn-success w-100 w-sm-auto shadow-sm">
+                <i class="bi bi-plus-lg"></i> Nova Disciplina
+            </a>
+        </div>
+    </div>
+
+    <div th:if="${#lists.isEmpty(disciplinas)}" class="text-center py-5 bg-white rounded-4 shadow-sm border">
+        <i class="bi bi-journal-x text-muted display-4"></i>
+        <p class="text-muted mt-2 mb-0">Nenhuma disciplina cadastrada.</p>
+    </div>
+
+    <div th:unless="${#lists.isEmpty(disciplinas)}">
+        
+        <div class="d-block d-md-none">
+            <div th:each="disciplina : ${disciplinas}" class="card shadow-sm border-0 mb-3 rounded-4">
+                <div class="card-body p-3">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                        <h5 class="fw-bold text-dark mb-0" th:text="${disciplina.nome}"></h5>
+                        <span th:class="${disciplina.ativa} ? 'badge bg-success-subtle text-success' : 'badge bg-danger-subtle text-danger'"
+                              th:text="${disciplina.ativa} ? 'Ativa' : 'Inativa'">
+                        </span>
+                    </div>
+
+                    <p class="text-muted small mb-2">
+                        <i class="bi bi-person-circle me-1"></i> <span th:text="${disciplina.professor}"></span>
+                    </p>
+
+                    <div class="mb-3 small">
+                        <a th:href="'mailto:' + ${disciplina.emailProfessor}" class="text-decoration-none d-block mb-1 text-break">
+                            <i class="bi bi-envelope me-1"></i> <span th:text="${disciplina.emailProfessor}"></span>
+                        </a>
+                        <div class="d-flex flex-wrap gap-2 mt-2">
+                            <span class="badge bg-light text-dark border"><i class="bi bi-google me-1"></i> <span th:text="${disciplina.codigoClassroom}"></span></span>
+                            <span class="badge bg-light text-dark border"><i class="bi bi-clock me-1"></i> <span th:text="${disciplina.horario}"></span></span>
+                            <span class="badge bg-light text-dark border">Período: <span th:text="${disciplina.periodo}"></span></span>
+                        </div>
+                    </div>
+
+                    <div th:if="${disciplina.ementa != null and !disciplina.ementa.isBlank()}" class="mb-3">
+                        <button class="btn btn-outline-secondary btn-sm w-100 text-start d-flex justify-content-between align-items-center" 
+                                type="button" data-bs-toggle="collapse" th:attr="data-bs-target='#ementa-mobile-' + ${disciplina.id}">
+                            <span><i class="bi bi-file-text me-1"></i> Ementa da Disciplina</span>
+                            <i class="bi bi-chevron-down small"></i>
+                        </button>
+                        <div class="collapse mt-2 bg-light p-2 rounded-3 small text-muted" th:id="'ementa-mobile-' + ${disciplina.id}">
+                            <p class="mb-0" style="white-space: pre-line;" th:text="${disciplina.ementa}"></p>
+                        </div>
+                    </div>
+
+                    <div class="d-flex gap-2 border-top pt-2">
+                        <a th:href="@{/disciplina/editar/{id}(id=${disciplina.id})}" class="btn btn-warning btn-sm flex-grow-1">
+                            <i class="bi bi-pencil"></i> Editar
+                        </a>
+                        <a th:href="@{/disciplina/excluir/{id}(id=${disciplina.id})}" class="btn btn-danger btn-sm flex-grow-1" onclick="return confirm('Excluir disciplina?')">
+                            <i class="bi bi-trash"></i> Excluir
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="table-container shadow-sm border bg-white d-none d-md-block">
+            <table class="table table-hover mb-0">
+                <thead class="table-light text-secondary">
+                    <tr>
+                        <th class="fw-semibold border-bottom-0">Nome</th>
+                        <th class="fw-semibold border-bottom-0">Professor</th>
+                        <th class="fw-semibold border-bottom-0">Email</th>
+                        <th class="fw-semibold border-bottom-0">Classroom</th>
+                        <th class="fw-semibold border-bottom-0">Horário</th>
+                        <th class="fw-semibold border-bottom-0">Período</th>
+                        <th class="fw-semibold border-bottom-0">Status</th>
+                        <th class="fw-semibold border-bottom-0" style="width: 25%;">Ementa</th>
+                        <th class="fw-semibold border-bottom-0 text-center">Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="disciplina : ${disciplinas}">
+                        <td class="fw-bold text-dark" th:text="${disciplina.nome}"></td>
+                        <td class="text-muted"><i class="bi bi-person-circle me-1"></i> <span th:text="${disciplina.professor}"></span></td>
+                        <td>
+                            <a th:href="'mailto:' + ${disciplina.emailProfessor}" class="text-decoration-none">
+                                <i class="bi bi-envelope"></i> <span th:text="${disciplina.emailProfessor}"></span>
+                            </a>
+                        </td>
+                        <td><span class="badge bg-light text-dark border" th:text="${disciplina.codigoClassroom}"></span></td>
+                        <td class="text-muted" th:text="${disciplina.horario}"></td>
+                        <td th:text="${disciplina.periodo}"></td>
+                        <td>
+                            <span th:class="${disciplina.ativa} ? 'badge bg-success-subtle text-success border' : 'badge bg-danger-subtle text-danger border'"
+                                  th:text="${disciplina.ativa} ? 'Ativa' : 'Inativa'">
+                            </span>
+                        </td>
+                        <td class="text-muted small">
+                            <div th:if="${disciplina.ementa != null and !disciplina.ementa.isBlank()}">
+                                <span th:id="'resumo-' + ${disciplina.id}"
+                                      th:text="${#strings.length(disciplina.ementa) > 60 ? #strings.substring(disciplina.ementa,0,60) + '...' : disciplina.ementa}">
+                                </span>
+                                <div class="collapse mt-2 bg-light p-2 rounded" th:id="'ementa-desktop-' + ${disciplina.id}">
+                                    <p class="mb-0" th:text="${disciplina.ementa}"></p>
+                                </div>
+                                <button th:if="${#strings.length(disciplina.ementa) > 60}"
+                                        class="btn btn-light btn-sm w-100 py-1 px-2 mt-2 border border-secondary-subtle"
+                                        style="min-height: auto; font-size: 0.75rem;"
+                                        data-bs-toggle="collapse"
+                                        th:attr="data-bs-target='#ementa-desktop-' + ${disciplina.id}">
+                                    <i class="bi bi-plus-circle me-1"></i> Expandir Ementa
+                                </button>
+                            </div>
+                            <span th:unless="${disciplina.ementa != null and !disciplina.ementa.isBlank()}" class="fst-italic opacity-50">Não cadastrada</span>
+                        </td>
+                        <td>
+                            <div class="d-flex gap-2 justify-content-center">
+                                <a th:href="@{/disciplina/editar/{id}(id=${disciplina.id})}" class="btn btn-warning btn-sm" title="Editar">
+                                    <i class="bi bi-pencil"></i>
+                                </a>
+                                <a th:href="@{/disciplina/excluir/{id}(id=${disciplina.id})}" class="btn btn-danger btn-sm" onclick="return confirm('Excluir disciplina?')" title="Excluir">
+                                    <i class="bi bi-trash"></i>
+                                </a>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bundle.min.js"></script>
+</body>
+</html>

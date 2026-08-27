@@ -1,0 +1,33 @@
+C:\Users\17155956619\Documents\1-linguagens e tecnicas\inicio_structs\bin\Debug\net9.0\inicio_structs.exe
+C:\Users\17155956619\Documents\1-linguagens e tecnicas\inicio_structs\bin\Debug\net9.0\inicio_structs.deps.json
+C:\Users\17155956619\Documents\1-linguagens e tecnicas\inicio_structs\bin\Debug\net9.0\inicio_structs.runtimeconfig.json
+C:\Users\17155956619\Documents\1-linguagens e tecnicas\inicio_structs\bin\Debug\net9.0\inicio_structs.dll
+C:\Users\17155956619\Documents\1-linguagens e tecnicas\inicio_structs\bin\Debug\net9.0\inicio_structs.pdb
+C:\Users\17155956619\Documents\1-linguagens e tecnicas\inicio_structs\obj\Debug\net9.0\inicio_structs.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\17155956619\Documents\1-linguagens e tecnicas\inicio_structs\obj\Debug\net9.0\inicio_structs.AssemblyInfoInputs.cache
+C:\Users\17155956619\Documents\1-linguagens e tecnicas\inicio_structs\obj\Debug\net9.0\inicio_structs.AssemblyInfo.cs
+C:\Users\17155956619\Documents\1-linguagens e tecnicas\inicio_structs\obj\Debug\net9.0\inicio_structs.csproj.CoreCompileInputs.cache
+C:\Users\17155956619\Documents\1-linguagens e tecnicas\inicio_structs\obj\Debug\net9.0\inicio_structs.dll
+C:\Users\17155956619\Documents\1-linguagens e tecnicas\inicio_structs\obj\Debug\net9.0\refint\inicio_structs.dll
+C:\Users\17155956619\Documents\1-linguagens e tecnicas\inicio_structs\obj\Debug\net9.0\inicio_structs.pdb
+C:\Users\17155956619\Documents\1-linguagens e tecnicas\inicio_structs\obj\Debug\net9.0\inicio_structs.genruntimeconfig.cache
+C:\Users\17155956619\Documents\1-linguagens e tecnicas\inicio_structs\obj\Debug\net9.0\ref\inicio_structs.dll
+<<<<<<< HEAD
+C:\Users\17155956619\Documents\1-linguagens e tecnicas\inicio_structs\obj\Debug\net9.0\inicio_structs.sourcelink.json
+=======
+C:\atividades_matheus_sistemas\structs_e_classes\Projeto-inicial-mateus-\bin\Debug\net9.0\inicio_structs.exe
+C:\atividades_matheus_sistemas\structs_e_classes\Projeto-inicial-mateus-\bin\Debug\net9.0\inicio_structs.deps.json
+C:\atividades_matheus_sistemas\structs_e_classes\Projeto-inicial-mateus-\bin\Debug\net9.0\inicio_structs.runtimeconfig.json
+C:\atividades_matheus_sistemas\structs_e_classes\Projeto-inicial-mateus-\bin\Debug\net9.0\inicio_structs.dll
+C:\atividades_matheus_sistemas\structs_e_classes\Projeto-inicial-mateus-\bin\Debug\net9.0\inicio_structs.pdb
+C:\atividades_matheus_sistemas\structs_e_classes\Projeto-inicial-mateus-\obj\Debug\net9.0\inicio_structs.GeneratedMSBuildEditorConfig.editorconfig
+C:\atividades_matheus_sistemas\structs_e_classes\Projeto-inicial-mateus-\obj\Debug\net9.0\inicio_structs.AssemblyInfoInputs.cache
+C:\atividades_matheus_sistemas\structs_e_classes\Projeto-inicial-mateus-\obj\Debug\net9.0\inicio_structs.AssemblyInfo.cs
+C:\atividades_matheus_sistemas\structs_e_classes\Projeto-inicial-mateus-\obj\Debug\net9.0\inicio_structs.csproj.CoreCompileInputs.cache
+C:\atividades_matheus_sistemas\structs_e_classes\Projeto-inicial-mateus-\obj\Debug\net9.0\inicio_structs.sourcelink.json
+C:\atividades_matheus_sistemas\structs_e_classes\Projeto-inicial-mateus-\obj\Debug\net9.0\inicio_structs.dll
+C:\atividades_matheus_sistemas\structs_e_classes\Projeto-inicial-mateus-\obj\Debug\net9.0\refint\inicio_structs.dll
+C:\atividades_matheus_sistemas\structs_e_classes\Projeto-inicial-mateus-\obj\Debug\net9.0\inicio_structs.pdb
+C:\atividades_matheus_sistemas\structs_e_classes\Projeto-inicial-mateus-\obj\Debug\net9.0\inicio_structs.genruntimeconfig.cache
+C:\atividades_matheus_sistemas\structs_e_classes\Projeto-inicial-mateus-\obj\Debug\net9.0\ref\inicio_structs.dll
+>>>>>>> 90cc4a7e0194a05af4c228febfd503e5c2529073

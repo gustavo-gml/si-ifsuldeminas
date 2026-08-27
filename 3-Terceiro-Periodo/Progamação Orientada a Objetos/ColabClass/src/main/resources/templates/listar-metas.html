@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Minhas Metas | ColabClass</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+
+<body class="bg-light">
+
+<div th:replace="~{fragments/navbar :: navbar}"></div>
+
+<div class="container mt-4">
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="fw-bold">
+            <i class="bi bi-check2-square text-primary"></i>
+            Minhas Metas
+        </h2>
+
+        <a href="/meta/nova" class="btn btn-primary">
+            <i class="bi bi-plus-lg"></i>
+            Nova Meta
+        </a>
+    </div>
+
+    <div th:if="${#lists.isEmpty(metas)}" class="alert alert-info">
+        Nenhuma meta cadastrada.
+    </div>
+
+    <div class="row g-3">
+        <div class="col-md-6 col-lg-4" th:each="meta : ${metas}">
+            <div class="card shadow-sm h-100">
+                <div class="card-body">
+
+                    <span th:if="${meta.concluida}" class="badge bg-success mb-2">
+                        Concluída
+                    </span>
+
+                    <span th:unless="${meta.concluida}" class="badge bg-warning text-dark mb-2">
+                        Pendente
+                    </span>
+
+                    <h5 class="card-title fw-bold" th:text="${meta.titulo}"></h5>
+
+                    <p class="card-text text-muted" th:text="${meta.descricao}"></p>
+
+                    <p class="small text-secondary">
+                        Data limite:
+                        <span th:text="${meta.dataLimite != null ? #temporals.format(meta.dataLimite, 'dd/MM/yyyy') : 'Sem data'}"></span>
+                    </p>
+
+                    <div class="d-flex flex-wrap gap-2">
+                        <a th:href="@{/meta/editar/{id}(id=${meta.id})}" class="btn btn-warning btn-sm">
+                            Editar
+                        </a>
+
+                        <a th:if="${!meta.concluida}"
+                           th:href="@{/meta/concluir/{id}(id=${meta.id})}"
+                           class="btn btn-success btn-sm">
+                            Concluir
+                        </a>
+
+                        <a th:href="@{/meta/excluir/{id}(id=${meta.id})}"
+                           class="btn btn-danger btn-sm"
+                           onclick="return confirm('Deseja excluir esta meta?')">
+                            Excluir
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

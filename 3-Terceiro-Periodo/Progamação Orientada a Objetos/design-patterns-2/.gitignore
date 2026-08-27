@@ -1,0 +1,57 @@
+# ==========================================
+# Arquivos compilados (Java)
+# ==========================================
+*.class
+
+# ==========================================
+# Arquivos de Log
+# ==========================================
+*.log
+sistema_log.txt
+
+# ==========================================
+# Pacotes compilados
+# ==========================================
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# ==========================================
+# Diretórios de build (Maven / Gradle)
+# ==========================================
+target/
+build/
+.gradle/
+
+# ==========================================
+# Configurações de IDEs
+# ==========================================
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+out/
+
+# Eclipse
+.settings/
+.project
+.classpath
+bin/
+
+# Visual Studio Code
+.vscode/
+
+# ==========================================
+# Arquivos do Sistema Operacional
+# ==========================================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db

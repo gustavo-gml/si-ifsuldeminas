@@ -1,0 +1,15 @@
+C:\atividades_matheus_sistemas\lista-de-exercicios-structs-classes-cs\exercicio-2\obj\Debug\net9.0\lista_3_structs_classes.GeneratedMSBuildEditorConfig.editorconfig
+C:\atividades_matheus_sistemas\lista-de-exercicios-structs-classes-cs\exercicio-2\obj\Debug\net9.0\lista_3_structs_classes.AssemblyInfoInputs.cache
+C:\atividades_matheus_sistemas\lista-de-exercicios-structs-classes-cs\exercicio-2\obj\Debug\net9.0\lista_3_structs_classes.AssemblyInfo.cs
+C:\atividades_matheus_sistemas\lista-de-exercicios-structs-classes-cs\exercicio-2\obj\Debug\net9.0\lista_3_structs_classes.csproj.CoreCompileInputs.cache
+C:\atividades_matheus_sistemas\lista-de-exercicios-structs-classes-cs\exercicio-2\obj\Debug\net9.0\lista_3_structs_classes.sourcelink.json
+C:\atividades_matheus_sistemas\lista-de-exercicios-structs-classes-cs\exercicio-2\bin\Debug\net9.0\lista_3_structs_classes.exe
+C:\atividades_matheus_sistemas\lista-de-exercicios-structs-classes-cs\exercicio-2\bin\Debug\net9.0\lista_3_structs_classes.deps.json
+C:\atividades_matheus_sistemas\lista-de-exercicios-structs-classes-cs\exercicio-2\bin\Debug\net9.0\lista_3_structs_classes.runtimeconfig.json
+C:\atividades_matheus_sistemas\lista-de-exercicios-structs-classes-cs\exercicio-2\bin\Debug\net9.0\lista_3_structs_classes.dll
+C:\atividades_matheus_sistemas\lista-de-exercicios-structs-classes-cs\exercicio-2\bin\Debug\net9.0\lista_3_structs_classes.pdb
+C:\atividades_matheus_sistemas\lista-de-exercicios-structs-classes-cs\exercicio-2\obj\Debug\net9.0\lista_3_structs_classes.dll
+C:\atividades_matheus_sistemas\lista-de-exercicios-structs-classes-cs\exercicio-2\obj\Debug\net9.0\refint\lista_3_structs_classes.dll
+C:\atividades_matheus_sistemas\lista-de-exercicios-structs-classes-cs\exercicio-2\obj\Debug\net9.0\lista_3_structs_classes.pdb
+C:\atividades_matheus_sistemas\lista-de-exercicios-structs-classes-cs\exercicio-2\obj\Debug\net9.0\lista_3_structs_classes.genruntimeconfig.cache
+C:\atividades_matheus_sistemas\lista-de-exercicios-structs-classes-cs\exercicio-2\obj\Debug\net9.0\ref\lista_3_structs_classes.dll

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../imagens/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../estilo/style.css">
+    <title>Crie sua conta</title>
+
+</head>
+<body>
+  <header>
+    <a href="../index.html" class="clic-logo">Clic WR</a>
+  </header> 
+
+  <main>
+    
+    
+
+      <div class="formulario">
+      <h2 class="login-do-form">Crie sua conta</h2>
+    
+      <form action="../index.html" >
+     
+
+        <fieldset class="div-input-cad"> <!--O elemento HTML<fieldset> é usado para agrupar elementos, assim como rótulos ( <label>), dentro de um formulário web.
+
+        -->
+          <legend>Dados Pessoais</legend>
+
+      
+          
+          <label class="label-cad" for="nome" >Nome:</label><!--<label> representa uma legenda para um item em uma interface de usuário.-->
+          <input class="input-cad" type="text" id="nome" name="nome" required placeholder="Digite seu nome completo" > <!--O atributo Id especifica uma identificação única para o elemento HTML.(#Css)-->
+
+        
+        
+        
+        
+          <label class="label-cad" for="email">Email:</label>
+          <input class=" input-cad" type="email" id="email" name="email" required placeholder="Digite seu email">
+      
+      
+        
+        
+          <label class="label-cad" for="data" >Data de nascimento:</label>
+          <input class="input-cad" type="date" id="data" name="data" required> 
+        
+        </fieldset>
+        
+        
+        <fieldset class="div-input-cad">
+            <legend>Sexo</legend>
+            
+            <div class="sex">
+              <input  type="radio" id="masculino" name="sexo" value="Masculino" required>
+              <label for="masculino">Masculino</label>
+              
+            </div>
+
+            <div class="sex">
+              <input type="radio" id="feminino" name="sexo" value="Feminino" required>
+              <label for="feminino">Feminino</label>
+            </div>
+
+        </fieldset>
+        
+      
+        
+        <fieldset class = "div-input-cad">
+            <legend>Segurança</legend>
+            
+            <label class="label-cad" for="senha">Crie uma Senha:</label>
+            <input class="input-cad" type="password" id="senha" name="senha" required  minlength="8" placeholder="No mínimo oito caracteres">
+        
+      
+        
+        
+          <label class="label-cad" for="confirmacao">Confirme sua senha:</label>
+          <input class="input-cad" type="password" id="confirmacao" name="confirmacao" required placeholder="Confirme sua Senha" >
+        </fieldset>
+
+        
+        
+          
+
+          
+          <div class="div-button">
+          <input class="button-submit-cad" type="submit" value="Finalizar cadastro" >
+
+          <input class="button-above" type="reset" value="Limpar Dados" >
+
+          <input class="button-above" type="button" value="Consultar Cadastros"  onclick="location.href='../paginas/consulta.html'">
+          </div>
+          
+          <a class = "links" href="../index.html" >Voltar</a>
+        
+        
+      </form>
+    </div>
+    
+  </main>
+      
+      <footer class="rodape">&copy;
+        Desenvolvido por <strong>Gustavo Martins</strong>, <strong>José Gabriel</strong> e <strong>Tiago Lemes</strong>. Todos os direitos reservados.
+      </footer>
+      
+</body>
+</html>

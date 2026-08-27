@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ColabClass - Acesso</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #f8f9fa; }
+        .card { border-radius: 16px; }
+        .form-control { border-radius: 12px; min-height: 48px; }
+        .btn { border-radius: 12px; min-height: 48px; display: flex; align-items: center; justify-content: center; gap: 8px; }
+    </style>
+</head>
+<body class="d-flex align-items-center min-vh-100 py-4">
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-12 col-sm-10 col-md-8 col-lg-5">
+            
+            <div class="card shadow-sm border-0">
+                <div class="card-body p-4 p-md-5 text-center">
+                    
+                    <h1 class="display-5 fw-bold text-primary mb-2">
+                        <i class="bi bi-mortarboard-fill"></i> ColabClass
+                    </h1>
+                    <p class="text-muted mb-4">Organize sua turma em um só lugar.</p>
+
+                    <form th:action="@{/login}" method="post">
+                        
+                        <div class="form-floating mb-3 text-start">
+                            <input type="email" class="form-control bg-light border-0" id="username" name="username" placeholder="Email" required>
+                            <label for="username" class="text-muted"><i class="bi bi-envelope me-1"></i> E-mail</label>
+                        </div>
+
+                        <div class="form-floating mb-4 text-start">
+                            <input type="password" class="form-control bg-light border-0" id="password" name="password" placeholder="Senha" required>
+                            <label for="password" class="text-muted"><i class="bi bi-lock me-1"></i> Senha</label>
+                        </div>
+
+                        <div class="d-flex flex-column gap-3">
+                            <button class="btn btn-primary btn-lg w-100 fw-semibold shadow-sm" type="submit">
+                                Entrar
+                            </button>
+                            <a href="/usuario/novo" class="btn btn-outline-secondary w-100 fw-medium">
+                                Criar Conta
+                            </a>
+                        </div>
+
+                    </form>
+
+                    <div class="d-flex align-items-center my-4">
+                        <hr class="flex-grow-1 text-muted">
+                        <span class="px-3 text-muted small fw-medium text-uppercase">Ou</span>
+                        <hr class="flex-grow-1 text-muted">
+                    </div>
+
+                    <div class="bg-light p-4 rounded-4 text-start">
+                        <h5 class="fw-bold mb-1 text-dark d-flex align-items-center gap-2">
+                            <i class="bi bi-eye text-primary"></i> Acesso Visitante
+                        </h5>
+                        <p class="text-muted small mb-3">Digite o código da turma para acessar o mural.</p>
+                        
+                        <form action="/turma" method="get">
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control border-secondary-subtle" id="codigo" name="codigo" placeholder="Ex: ESW3P2026" required>
+                                <label for="codigo" class="text-muted">Código da turma</label>
+                            </div>
+                            <button class="btn btn-success w-100 fw-medium shadow-sm" type="submit">
+                                Acessar Mural <i class="bi bi-arrow-right"></i>
+                            </button>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
